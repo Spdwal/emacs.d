@@ -26,7 +26,7 @@
 
 (require 'init-start)
 
-(require 'init-kb-gobal)
+(require 'init-kb-global)
 (require 'init-ui)
 
 
