@@ -23,7 +23,15 @@
          ;; 智能删除行
   :bind (("C-c k" . crux-smart-kill-line)
 	 ;; 智能添加一个空行，并且锁紧
-	 ("M-o". crux-smart-open-line)))
+	 ("M-o" . crux-smart-open-line)
+	 ;; 跳到本行缩进后的第一个字符处
+	 ("C-a" . crux-move-beginning-of-line)
+	 ;; 智能将下面的空行删除
+	 ("C-c ^" . crux-top-join-line)
+	 ;; 自动跳到 init.el
+	 ("C-x ." . crux-find-user-init-file)
+	 ;; 自动复制黏贴当前行
+	 ("C-S-d" . crux-duplicate-current-line-or-region)))
 
 (use-package drag-stuff
   :bind (("<M-up>" . drag-stuff-up)
