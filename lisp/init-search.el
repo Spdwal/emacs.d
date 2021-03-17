@@ -33,11 +33,34 @@
   :config (setq swiper-action-recenter t
 		;; 搜索时显示行号
 		swiper-include-line-number-in-search t))
+		
+;;----------------------------------------------------------------------
+;;  添加 ivy-posframe 包
+;;  可以将一些需要使用minibuffer的命令框架移动到指定位置
+(use-package ivy-posframe
+  :ensure t
+  :diminish ivy-posframe-mode
+  :custom-face
+  (ivy-posframe ((t (:background "#333244"))))
+  (ivy-posframe-border ((t (:background "#abff00"))))
+  (ivy-posframe-cursor ((t (:background "#00ff00"))))
+  :hook
+  (ivy-mode . ivy-posframe-mode)
+  :config
+  ;; custom define height of post frame per function
+  (setq ivy-posframe-height-alist '((swiper . 15)
+                                    (find-file . 20)
+                                    (counsel-ag . 15)
+                                    (counsel-projectile-ag . 30)
+                                    (t      . 25)))
 
-
-
-
-
-
+  ;; display at `ivy-posframe-style'
+  (setq ivy-posframe-display-functions-alist
+        '((swiper          . ivy-posframe-display-at-window-center)
+          (complete-symbol . ivy-posframe-display-at-point)
+          ;;(counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+          (counsel-M-x     . ivy-posframe-display-at-frame-center)
+          (t               . ivy-posframe-display-at-frame-center)))
+  (ivy-posframe-mode 1))
 
 (provide 'init-search)

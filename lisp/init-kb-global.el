@@ -43,5 +43,10 @@
 	 ("C-c <left>" . buf-move-left)
 	 ("C-c <right>" . buf-move-right)))
 
+;; 当按下prefix键的时候，自动提示之后的按键
+(use-package which-key
+  :defer nil
+  :config (which-key-mode))
+
 (provide 'init-kb-global)
 
