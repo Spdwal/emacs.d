@@ -15,19 +15,25 @@
 ;; C-c DEL 删除到前一个非空字符
 ;; C-c d   删除到后一个非空字符
 (use-package hungry-delete
-  :bind (("C-c DEL" . hungry-delete-backward))
-  :bind (("C-c d" . hungry-delete-forward)))
+  :bind (("C-c DEL" . hungry-delete-backward)
+	 ("C-c d" . hungry-delete-forward)))
 
 ;; 使用curx包
 (use-package crux
-  ;; 智能删除行
-  :bind ("C-c k" . crux-smart-kill-line)
-  ;; 智能添加一个空行，并且锁紧
-  :bind ("M-o". crux-smart-open-line))
+         ;; 智能删除行
+  :bind (("C-c k" . crux-smart-kill-line)
+	 ;; 智能添加一个空行，并且锁紧
+	 ("M-o". crux-smart-open-line)))
 
 (use-package drag-stuff
   :bind (("<M-up>" . drag-stuff-up)
 	 ("<M-down>" . drag-stuff-down)))
+
+(use-package buffer-move
+  :bind (("C-c <up>" . buf-move-up)
+	 ("C-c <down>" . buf-move-down)
+	 ("C-c <left>" . buf-move-left)
+	 ("C-c <right>" . buf-move-right)))
 
 (provide 'init-kb-global)
 

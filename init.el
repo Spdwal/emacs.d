@@ -31,3 +31,4 @@
 
 
 (require 'init-search)
+(require 'init-company)
