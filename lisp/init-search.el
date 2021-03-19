@@ -13,7 +13,11 @@
 	;; 表示在使用 minibuffer 时候，可以使用适用于 minibuffer 的命令
 	enable-recursive-minibuffers t
 	;; 指定搜索时候调用的正则表达式函数
-	ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
+	ivy-re-builders-alist '((t . ivy--regex-ignore-order)
+				;; ivy--regex-plus 支持模糊搜索，关键字之间用空格分割
+				(swiper . ivy--regex-plus)
+				(counsel-rg . ivy--regex-plus)
+				(swiper-search . ivy--regex-plus))))
 
 (use-package counsel
   :after (ivy)
@@ -22,7 +26,8 @@
 	 ;; 从 recentf-list 中寻找文件
          ("C-c f" . counsel-recentf)
 	 ;; 从当前 git 仓库中寻找一个文件
-         ("C-c g" . counsel-git)))
+         ("C-c g" . counsel-git)
+	 ("C-x b" . counsel-switch-buffer)))
 
 ;; 搜索用的包
 (use-package swiper
@@ -37,6 +42,7 @@
 ;;----------------------------------------------------------------------
 ;;  添加 ivy-posframe 包
 ;;  可以将一些需要使用minibuffer的命令框架移动到指定位置
+;;----------------------------------------------------------------------
 (use-package ivy-posframe
   :ensure t
   :diminish ivy-posframe-mode
