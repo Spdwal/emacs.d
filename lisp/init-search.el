@@ -72,17 +72,25 @@
 ;;----------------------------------------------------------------------
 ;;  在minibuff里显示文件和buffer所在的文件夹
 ;;----------------------------------------------------------------------
+;; (use-package ivy-rich
+;;   :after counsel
+;;   :init
+;;   (setq ivy-rich-path-style 'abbrev
+;; 	ivy-virtual-abbreviate 'abbrevate)
+;;   (setq ivy-rich-display-transformers-list
+;; 	'(counsel-switch-buffer
+;; 	  (:columns
+;; 	   ((ivy-rich-candidate (:width 30))
+;; 	    (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))
+;; 	   :predicate
+;; 	   (lambda (cand) (get-buffer cand))))))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode 1))
+
 (use-package ivy-rich
-  :after counsel
-  :init
-  (setq ivy-rich-path-style 'abbrev
-	ivy-virtual-abbreviate 'abbrevate)
-  (setq ivy-rich-display-transformers-list
-	'(counsel-switch-buffer
-	  (:columns
-	   ((ivy-rich-candidate (:width 30))
-	    (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))
-	   :predicate
-	   (lambda (cand) (get-buffer cand))))))
+  :ensure t
+  :init (ivy-rich-mode 1))
 
 (provide 'init-search)

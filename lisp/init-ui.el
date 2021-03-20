@@ -31,4 +31,6 @@
   (setq display-line-numbers-type 'relative)
   (global-display-line-numbers-mode))
 
+(use-package fontawesome)
+
 (provide 'init-ui)
