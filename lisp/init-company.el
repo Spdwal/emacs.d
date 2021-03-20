@@ -34,4 +34,12 @@
 (use-package company-prescient
   :init (company-prescient-mode 1))
 
+(use-package autopair
+  :init
+  (autopair-global-mode))
+
+(use-package rainbow-delimiters
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
+
 (provide 'init-company)

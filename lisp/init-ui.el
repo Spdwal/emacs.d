@@ -1,7 +1,13 @@
 
 ;; 更换主题为 spacemacs-theme 主题
 (use-package spacemacs-theme
- :init (load-theme 'spacemacs-dark t))
+  :init (load-theme 'spacemacs-dark t))
+
+;; 显示电量
+(use-package fancy-battery
+  :init
+  (setq fancy-battery-show-percentage t)
+  (fancy-battery-mode))
 
 ;;---------------------------------------------------------------------
 ;;  spaceline速度上有问题 
@@ -14,7 +20,13 @@
   ;; 启用spaceline
   (spaceline-spacemacs-theme)
   ;; 关闭spaceline-toggle-minor-mode
-  (spaceline-toggle-minor-modes-off))
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-flycheck-error-on)
+  (spaceline-toggle-flycheck-warning-on)
+  (spaceline-toggle-version-control-on)
+  (spaceline-toggle-line-column-on)
+  (spaceline-toggle-battery-on)
+  (spaceline-toggle-input-method-on))
 
 (use-package nyan-mode
   :init
