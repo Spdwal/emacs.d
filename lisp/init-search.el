@@ -5,7 +5,7 @@
   :config
   (ivy-mode 1)
         ;; 把最近的文件和书签添加到 ivy-switch-buffer 中
-  (setq ivy-use-virtual-buffers t
+  (setq ivy-use-virtual-buffers nil
 	;; 没整明白，好像和ivy-read有关，在init时候会调用这个列表里的所有命令
 	ivy-initial-inputs-alist nil
 	;; 在 M-x 寻找命令时候 最左边会出现 "index / count "
@@ -26,8 +26,7 @@
 	 ;; 从 recentf-list 中寻找文件
          ("C-c f" . counsel-recentf)
 	 ;; 从当前 git 仓库中寻找一个文件
-         ("C-c g" . counsel-git)
-	 ("C-x b" . counsel-switch-buffer)))
+         ("C-c g" . counsel-git)))
 
 ;; 搜索用的包
 (use-package swiper

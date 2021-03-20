@@ -32,3 +32,4 @@
 
 (require 'init-search)
 (require 'init-company)
+(require 'init-window)

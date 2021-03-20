@@ -8,3 +8,6 @@
 		switch-window-timeout nil)
   :bind
   (("C-x o" . switch-window)))
+
+
+(provide 'init-window)
