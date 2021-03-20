@@ -34,9 +34,18 @@
 (use-package company-prescient
   :init (company-prescient-mode 1))
 
-(use-package autopair
-  :init
-  (autopair-global-mode))
+
+
+;; 括号自动补全
+(electric-pair-mode 1)
+(setq electric-pair-pairs
+      '(
+	(?\" . ?\")   ;; 添加双引号补齐
+	(?\{ . ?\})   ;; 添加大括号补齐
+	(?\' . ?\')   ;; 添加单引号补全
+	(?\’ . ?\‘))) ;; 添加中文单引号补全
+
+
 
 (use-package rainbow-delimiters
   :hook
