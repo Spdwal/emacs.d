@@ -1,7 +1,7 @@
  ;; 将mac的command键盘设置为meta
 (when *is-a-mac*
   (setq mac-command-modifier 'meta)
-  (setq mac-option-modifire 'none))
+  (setq mac-option-modifier 'super))
 
 ;; 使用 y/n 代替 yes/no
 (use-package emacs
