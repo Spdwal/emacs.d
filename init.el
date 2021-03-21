@@ -33,3 +33,9 @@
 (require 'init-search)
 (require 'init-company)
 (require 'init-window)
+(require 'init-term)
+
+(require 'init-lsp)
+
+
+(require 'init-python)

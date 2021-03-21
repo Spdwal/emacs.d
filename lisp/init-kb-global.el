@@ -48,5 +48,8 @@
   :defer nil
   :config (which-key-mode))
 
+(global-set-key (kbd "C-/") 'comment-line)
+(global-set-key (kbd "C-?") 'comment-or-uncomment-region)
+
 (provide 'init-kb-global)
 
