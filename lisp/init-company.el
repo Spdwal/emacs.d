@@ -38,17 +38,29 @@
 
 ;; 括号自动补全
 (electric-pair-mode 1)
-(setq electric-pair-pairs
-      '(
-	(?\" . ?\")   ;; 添加双引号补齐
-	(?\{ . ?\})   ;; 添加大括号补齐
-	(?\' . ?\')   ;; 添加单引号补全
-	(?\’ . ?\‘))) ;; 添加中文单引号补全
+
+(setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
 
 
+;; (defun add-electric-pairs ()
+;;   (if (member major-mode '(emacs-lisp-mode))
+;;       (setq-local electric-pair-pairs
+;;       '(
+;; 	(?\" . ?\")   ;; 添加双引号补齐
+;; 	(?\{ . ?\})   ;; 添加大括号补齐
+;; 	(?\' . ?\')   ;; 添加单引号补全
+;; 	(?\’ . ?\‘))) ;; 添加中文单引号补全
+;;     (setq-local electric-pair-pairs
+;;       '(
+;; 	(?\" . ?\")   ;; 添加双引号补齐
+;; 	(?\{ . ?\})   ;; 添加大括号补齐
+;; 	(?\’ . ?\‘))))) ;; 添加中文单引号补全
+
+;; (add-hook 'prog-mode-hook 'add-electric-pairs)
 
 (use-package rainbow-delimiters
   :hook
   (prog-mode . rainbow-delimiters-mode))
+
 
 (provide 'init-company)
