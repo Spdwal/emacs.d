@@ -8,9 +8,7 @@
 (setq inhibit-startup-screen t)
 
 ;; 使用国内源
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("gnu"   . "http://elpa.emacs-china.org/gnu/")
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
                          ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 
 ;; 关闭检查签名
