@@ -38,3 +38,4 @@
 
 
 (require 'init-python)
+(require 'init-elisp)

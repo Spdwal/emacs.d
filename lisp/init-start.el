@@ -35,6 +35,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+
 ;;       永远加载
 (setq use-package-always-ensure t
       ;; 永远延迟加载
